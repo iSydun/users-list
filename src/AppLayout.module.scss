@@ -1,6 +1,12 @@
+@import "assets/styles/measurements";
+
 .container {
   display: grid;
   grid-template: 1fr / 1fr;
   height: 100%;
   width: 100%;
+  max-width: $max-container-width;
+  min-width: $min-container-width;
+  margin: auto;
+  position: relative;
 }
