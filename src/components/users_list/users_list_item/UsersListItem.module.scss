@@ -1,0 +1,31 @@
+@import "./src/assets/styles/colors";
+@import "./src/assets/styles/breakpoints";
+
+.container {
+  display: flex;
+  align-items: baseline;
+  & .id {
+    align-self: center;
+    width: 1rem;
+    font-size: 0.75rem;
+    color: $font-secondary;
+    &::after {
+      content: ".";
+    }
+  }
+  & .name {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    @media (max-width: $mobile) {
+      font-size: 0.8rem;
+    }
+  }
+  & .username {
+    align-self: center;
+    font-size: 0.85rem;
+    color: $font-secondary;
+    &::before {
+      content: "@";
+    }
+  }
+}
