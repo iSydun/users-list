@@ -1,6 +1,11 @@
+@import "fonts";
+@import "colors";
+
 html,
 body,
 #root {
   height: 100%;
   overflow: hidden;
+  color: $font;
+  font-family: "Quicksand", serif;
 }
