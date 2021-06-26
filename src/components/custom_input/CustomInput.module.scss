@@ -3,9 +3,9 @@
 .input {
   width: 12.5rem;
   height: 1.25rem;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   border: 2px solid $border-color;
-  padding: 0 0.25rem;
+  padding: 0.25rem;
   &::placeholder {
     color: $font-secondary;
   }

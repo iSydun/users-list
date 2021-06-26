@@ -1,20 +1,25 @@
 import style from "./CustomInput.module.scss";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 interface IProps {
   placeholder: string;
   value: string;
-  onChange: () => void;
+  onChange: (value: string) => void;
 }
 
 const CustomInput = ({ value, onChange, placeholder }: IProps) => {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
   return (
     <input
       className={style.input}
       type="text"
       placeholder={placeholder}
       value={value}
-      onChange={onChange}
+      onChange={handleOnChange}
     />
   );
 };
