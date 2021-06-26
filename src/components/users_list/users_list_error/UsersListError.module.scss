@@ -1,0 +1,15 @@
+@import "src/assets/styles/colors";
+
+.container {
+  width: 100%;
+  font-size: 1.25rem;
+  color: $font-secondary;
+  text-align: center;
+  & .refetch {
+    text-decoration: underline;
+    text-transform: lowercase;
+    cursor: pointer;
+    font-weight: bold;
+    color: $info;
+  }
+}
