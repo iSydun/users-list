@@ -1,0 +1,20 @@
+@import "src/assets/styles/colors";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+  border: 1px solid $border-color;
+  cursor: pointer;
+  font-weight: bold;
+  &:last-child {
+    border-left: 0;
+  }
+  &.selected {
+    color: white;
+    background-color: $info;
+  }
+}
