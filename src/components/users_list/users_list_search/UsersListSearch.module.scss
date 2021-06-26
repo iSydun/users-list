@@ -1,0 +1,10 @@
+@import "./src/assets/styles/colors";
+
+.container {
+  display: flex;
+  flex: 1;
+  & input {
+    display: flex;
+    flex: 1;
+  }
+}
