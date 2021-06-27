@@ -7,6 +7,7 @@ const EnglishTranslations = {
     pageRefresh: "Odśwież stronę",
     somethingWentWrong:
       "Właśnie tego się baliśmy... Przepraszamy, zaraz wszystko naprawimy ",
+    crashTheApp: "Zabij aplikację",
   },
   Users: {
     usersListTitle: "Lista użytkowników",

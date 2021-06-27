@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import style from "./AppLayout.module.scss";
 import LanguageSelector from "./components/language_selector/LanguageSelector";
 import PageRefresh from "./components/page_refresh/PageRefresh";
+import AuthorSignature from "./components/author_signature/AuthorSignature";
 
 interface IProps {
   children: ReactNode;
@@ -26,6 +27,7 @@ class AppLayout extends React.Component<IProps, IState> {
   render() {
     return (
       <div className={style.container}>
+        <AuthorSignature />
         <LanguageSelector />
         {this.state.hasError ? <PageRefresh /> : this.props.children}
       </div>

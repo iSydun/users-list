@@ -15,11 +15,17 @@
     width: 100%;
     padding: 1rem 0;
   }
-  & .refresh {
+  & .refresh,
+  & .crash {
     text-decoration: underline;
     cursor: pointer;
     font-weight: bold;
     color: $info;
+  }
+  & .crash {
+    color: $error;
+    position: absolute;
+    bottom: 2rem;
   }
   & .innerContainer {
     padding: 1rem 0;

@@ -8,7 +8,7 @@ import {
   getFilteredUsersSelector,
   getUsersErrorSelector,
 } from "../../reducers/users/selectors";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getUsersRequest } from "../../reducers/users/actions";
 import UsersListLoading from "./users_list_loading/UsersListLoading";
 import UsersListEmptyPlaceholder from "./users_list_empty_placeholder/UsersListEmptyPlaceholder";
@@ -19,7 +19,9 @@ const UsersList = () => {
   const filteredUsers = useSelector(getFilteredUsersSelector);
   const isLoading = useSelector(getUsersLoadingSelector);
   const error = useSelector(getUsersErrorSelector);
-  const { t } = useTranslation("Users");
+  const [crashTheAppRequest, setCrashTheAppRequest] = useState(false);
+
+  const { t } = useTranslation(["Users", "Common"]);
 
   const isEmpty = filteredUsers.length === 0;
   const isError = error !== null;
@@ -29,9 +31,18 @@ const UsersList = () => {
     dispatch(getUsersRequest());
   };
 
+  const handleCrashTheApp = () => {
+    setCrashTheAppRequest(true);
+  };
+
   useEffect(() => {
     handleGetUsersRequest();
   }, []);
+
+  // Added for testing purposes
+  if (crashTheAppRequest) {
+    throw new Error();
+  }
 
   return (
     <div className={style.container}>
@@ -63,6 +74,9 @@ const UsersList = () => {
             />
           ))
         )}
+      </div>
+      <div className={style.crash} onClick={handleCrashTheApp}>
+        {t("Common:crashTheApp")}
       </div>
     </div>
   );
