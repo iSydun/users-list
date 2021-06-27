@@ -17,6 +17,7 @@
     "classnames": "^2.3.1",
     "i18next": "^20.3.2",
     "i18next-browser-languagedetector": "^6.1.2",
+    "msw": "^0.30.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -43,15 +44,19 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
+    "prebuild": "npm test -- --watchAll=false --passWithNoTests",
     "serve": "serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "prettier --write --ignore-unknown",
+      "npm run prebuild"
+    ]
   },
   "eslintConfig": {
     "extends": [
