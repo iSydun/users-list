@@ -25,7 +25,14 @@
   & .crash {
     color: $error;
     position: absolute;
-    bottom: 2rem;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 0.5rem;
+    height: 3rem;
   }
   & .innerContainer {
     padding: 1rem 0;

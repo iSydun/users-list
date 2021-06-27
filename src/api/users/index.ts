@@ -2,7 +2,7 @@ import { httpService } from "../index";
 import { IUser } from "../../reducers/users/types";
 
 const getUsers = (): Promise<IUser[]> => {
-  return httpService.get(`users`);
+  return httpService.get(`/users`);
 };
 
 const usersApi = {
