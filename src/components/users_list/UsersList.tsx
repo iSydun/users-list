@@ -4,8 +4,11 @@ import UsersListSearch from "./users_list_search/UsersListSearch";
 import UsersListItem from "./users_list_item/UsersListItem";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getUsersLoadingSelector,
   getFilteredUsersSelector,
+  getIsFilteredUsersEmptySelector,
+  getIsUsersErrorSelector,
+  getIsUsersLoadingSelector,
+  getIsUsersSearchVisibleSelector,
   getUsersErrorSelector,
 } from "../../reducers/users/selectors";
 import { useEffect, useState } from "react";
@@ -16,16 +19,17 @@ import UsersListError from "./users_list_error/UsersListError";
 
 const UsersList = () => {
   const dispatch = useDispatch();
+
   const filteredUsers = useSelector(getFilteredUsersSelector);
-  const isLoading = useSelector(getUsersLoadingSelector);
+  const isEmpty = useSelector(getIsFilteredUsersEmptySelector);
+  const isLoading = useSelector(getIsUsersLoadingSelector);
+  const isError = useSelector(getIsUsersErrorSelector);
+  const isSearchVisible = useSelector(getIsUsersSearchVisibleSelector);
   const error = useSelector(getUsersErrorSelector);
+
   const [crashTheAppRequest, setCrashTheAppRequest] = useState(false);
 
   const { t } = useTranslation(["Users", "Common"]);
-
-  const isEmpty = filteredUsers.length === 0;
-  const isError = error !== null;
-  const isSearchVisible = !isLoading && !isError;
 
   const handleGetUsersRequest = () => {
     dispatch(getUsersRequest());
