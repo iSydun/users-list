@@ -8,6 +8,7 @@ const EnglishTranslations = {
     somethingWentWrong:
       "Właśnie tego się baliśmy... Przepraszamy, zaraz wszystko naprawimy ",
     crashTheApp: "Zabij aplikację",
+    noAuthorSignaturePlaceholder: "Anonim",
   },
   Users: {
     usersListTitle: "Lista użytkowników",
