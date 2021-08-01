@@ -65,9 +65,9 @@ const UsersList = () => {
         ) : isEmpty ? (
           <UsersListEmptyPlaceholder />
         ) : (
-          filteredUsers.map((user, index) => (
+          filteredUsers.map((user) => (
             <UsersListItem
-              key={index}
+              key={user.id}
               id={user.id}
               name={user.name}
               username={user.username}

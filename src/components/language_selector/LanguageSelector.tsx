@@ -7,6 +7,7 @@ import {
 } from "../../translations/i18n";
 import style from "./LanguageSelector.module.scss";
 import LanguageSelectorItem from "./language_selector_item/LanguageSelectorItem";
+import { nanoid } from "nanoid";
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
@@ -20,9 +21,9 @@ const LanguageSelector = () => {
 
   return (
     <div className={style.container}>
-      {SUPPORTED_APP_LANGUAGES.map((language, index) => (
+      {SUPPORTED_APP_LANGUAGES.map((language) => (
         <LanguageSelectorItem
-          key={index}
+          key={nanoid()}
           selected={selectedLanguage === language}
           name={language}
           onSelect={handleChangeLanguage}
